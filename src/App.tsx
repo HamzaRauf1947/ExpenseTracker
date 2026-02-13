@@ -5,16 +5,17 @@ import ExpenseList from './expense-tracker/components/ExpenseList';
 import ExpenseFilter from './expense-tracker/components/ExpenseFilter';
 import ExpenseForm from './expense-tracker/components/ExpenseForm';
 
+interface Expense {
+  id: number;
+  description: string;
+  amount: number;
+  category: "Groceries" | "Utlilities" | "Entertainment";
+}
 
 function App() { 
 
 
-const [expenses, setexpenses] = useState([
-    // {id:1,description:"aaa",amount:10,category:"Utlilities"},
-    // {id:2,description:"bbb",amount:55,category:"Groceries"},
-    // // {id:3,description:"xxx",amount:10,category:"Entertainment"},
-    // {id:4,description:"zzzz",amount:10,category:"Utlilities"},
-  ]);
+const [expenses, setexpenses] = useState<Expense[]>([]);
 
   const [selectCategory, setSelectCategory] = useState("")
 
