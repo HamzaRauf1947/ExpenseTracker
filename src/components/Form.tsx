@@ -1,49 +1,49 @@
 
-import { useForm,  type FieldValues } from "react-hook-form"
-interface FormData {
-    name: string,
-    age: number
-}
-const Form = () => {
+// import { useForm,  type FieldValues } from "react-hook-form"
+// interface FormData {
+//     name: string,
+//     age: number
+// }
+// const Form = () => {
 
-    const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+//     const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
 
-    console.log(errors.name);
+//     console.log(errors.name);
 
-    const onSubmit = (data: FieldValues) => console.log(data);
-
-
-    return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div className='mb-3'>
-                <label htmlFor="name">Name</label>
-                <input
-                    {...register("name",
-                         { required: true, minLength: 3, setValueAs: (v: string) => v.trim(), },)}
-                    id="name"
-                    type="text" />
-            </div>
-
-            {/* {errors.name?.type ==="required" && <p className="text-danger">The name field IS REQUIRED </p>} */}
-            {errors.name?.type === "required" && <p className="text-danger">The name field is required</p>}
-            {errors.name?.type === "minLength" && <p className="text-danger">at least 3 character</p>}
+//     const onSubmit = (data: FieldValues) => console.log(data);
 
 
-            <div className='mb-3'>
-                <label htmlFor="age">Age</label>
-                <input
-                    {...register("age")}
-                    id="age"
-                    type="number" />
-            </div>
+//     return (
+//         <form onSubmit={handleSubmit(onSubmit)}>
+//             <div className='mb-3'>
+//                 <label htmlFor="name">Name</label>
+//                 <input
+//                     {...register("name",
+//                          { required: true, minLength: 3, setValueAs: (v: string) => v.trim(), },)}
+//                     id="name"
+//                     type="text" />
+//             </div>
 
-            <button
-                type='submit'
-                className='btn btn-primary'>Submit</button>
+//             {/* {errors.name?.type ==="required" && <p className="text-danger">The name field IS REQUIRED </p>} */}
+//             {errors.name?.type === "required" && <p className="text-danger">The name field is required</p>}
+//             {errors.name?.type === "minLength" && <p className="text-danger">at least 3 character</p>}
 
 
-        </form>
-    )
-}
+//             <div className='mb-3'>
+//                 <label htmlFor="age">Age</label>
+//                 <input
+//                     {...register("age")}
+//                     id="age"
+//                     type="number" />
+//             </div>
 
-export default Form
+//             <button
+//                 type='submit'
+//                 className='btn btn-primary'>Submit</button>
+
+
+//         </form>
+//     )
+// }
+
+// export default Form
